@@ -1,0 +1,34 @@
+{
+  "høflig": [
+    "Tusen takk for invitasjonen, men jeg skal {aktivitet} {sted} den dagen.",
+    "Jeg setter veldig pris på at du tenkte på meg, men jeg har dessverre allerede avtalt {aktivitet} {sted}.",
+    "Så leit, men det passer ikke denne gangen — jeg er {aktivitet} {sted}.",
+    "Jeg hadde gledet meg til det, men jeg er faktisk {aktivitet} {sted} akkurat da.",
+    "Jeg kommer dessverre ikke — jeg er {aktivitet} {sted} den helgen.",
+    "Mange takk for inviten! Jeg er beklageligvis opptatt {aktivitet} {sted}.",
+    "Det høres kjempekoselig ut, men jeg har allerede planer — jeg skal {aktivitet} {sted}.",
+    "Så hyggelig at du spurte, men jeg er forhindret — jeg skal {aktivitet} {sted}.",
+    "Beklager, jeg stikker av gårde {aktivitet} {sted} den dagen."
+  ],
+  "frekk": [
+    "Orker ikke. Skal {aktivitet} {sted}.",
+    "Nope. {aktivitet} {sted}. Ha det.",
+    "Nei, jeg er {aktivitet} {sted}. Ikke spør igjen.",
+    "Hadde faktisk planer. {aktivitet} {sted}. Farvel.",
+    "Passer ikke. {aktivitet} {sted}. Enkelt.",
+    "Prøvde å komme, men så ble det {aktivitet} {sted} i stedet. Ups.",
+    "Seriøst, jeg er {aktivitet} {sted}. Spør noen andre.",
+    "Kalender full. {aktivitet} {sted}. Next."
+  ],
+  "dramatisk": [
+    "Skjebnen kaller — jeg MÅ {aktivitet} {sted}.",
+    "Det er ikke opp til meg lenger. Universet har bestemt at jeg skal {aktivitet} {sted}.",
+    "Min sjel får ingen ro før jeg er {aktivitet} {sted}. Det forstår du sikkert.",
+    "Jeg har ventet hele livet på denne sjansen til å dra {aktivitet} {sted}. Gå ikke imot skjebnen.",
+    "Et indre kall — sterkere enn alt annet — trekker meg {aktivitet} {sted}.",
+    "Hadde jeg kommet, hadde jeg bare vært tilstede med kroppen. Hjertet mitt er allerede {aktivitet} {sted}.",
+    "Noen ting kan ikke vente. {aktivitet} {sted} er ett av dem.",
+    "Dette er ikke et valg. Det er en kalling. {aktivitet} {sted}.",
+    "Jeg kunne vært der. Men {aktivitet} {sted} er min vei nå."
+  ]
+}
