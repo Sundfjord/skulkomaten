@@ -70,4 +70,26 @@ describe('buildExcuse', () => {
     const result2 = buildExcuse(surfekurs, lom, frame)
     expect(result1).toBe(result2)
   })
+
+  it('expands {aktivitetNoPre} to bare activity tekst without preposition', () => {
+    const frame = 'Nope. {aktivitetNoPre} {sted}. Ha det.'
+    expect(buildExcuse(surfekurs, lom, frame)).toBe('Nope. Surfekurs i Lom. Ha det.')
+  })
+
+  it('expands {stedNoPre} to bare place navn without preposition', () => {
+    const frame = 'Jeg drives mot {aktivitet} {stedNoPre}.'
+    expect(buildExcuse(surfekurs, lom, frame)).toBe('Jeg drives mot på surfekurs Lom.')
+  })
+
+  it('expands both NoPre variants in the same frame', () => {
+    const frame = 'Skal {aktivitetNoPre} {stedNoPre} nå.'
+    expect(buildExcuse(surfekurs, lom, frame)).toBe('Skal surfekurs Lom nå.')
+  })
+
+  it('handles mixed preposition variants in one frame', () => {
+    const frame = '{aktivitetNoPre} i {stedNoPre}? Nei. {aktivitet} {sted}.'
+    expect(buildExcuse(surfekurs, lom, frame)).toBe(
+      'Surfekurs i Lom? Nei. På surfekurs i Lom.',
+    )
+  })
 })
