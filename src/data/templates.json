@@ -1,58 +1,226 @@
 [
-  "Tusen takk for invitasjonen, men jeg skal på {aktivitet} {sted} den dagen.",
-  "Takk skal du ha for invitasjonen! Dessverre har jeg allerede avtalt {aktivitet} {sted}.",
-  "Så leit, men det passer ikke denne gangen — jeg er på {aktivitet} {sted}.",
-  "Jeg hadde gledet meg til det, men jeg er faktisk på {aktivitet} {sted} akkurat da.",
-  "Jeg kommer dessverre ikke — jeg er på {aktivitet} {sted} den helgen.",
-  "Takk for inviten! Dessverre har jeg allerede planer — jeg skal på {aktivitet} {sted}.",
-  "Det høres kjempekoselig ut, men jeg har allerede planer — jeg skal på {aktivitet} {sted}.",
-  "Så hyggelig at du spurte, men jeg kan dessverre ikke — jeg skal på {aktivitet} {sted}.",
-  "Beklager, jeg stikker av gårde på {aktivitet} {sted} den dagen.",
-  "Jeg beklager, men jeg har allerede planer om {aktivitet} {sted}.",
-  "Det virker herlig, men jeg har dessverre allerede avtalt {aktivitet} {sted}.",
-  "Virkelig synd, men jeg har allerede lovet å være {sted} på {aktivitet}.",
-  "Takk skal du ha, men jeg må avslå da jeg skal på {aktivitet} {sted}.",
-  "Jeg ville gjerne kommet, men jeg har dessverre allerede avtalt {aktivitet} {sted}.",
-  "Beklager at jeg ikke kan møte, jeg er {sted} på {aktivitet}.",
-  "Det er veldig snilt av deg, men jeg skal på {aktivitet} {sted} den dagen.",
-  "Jeg skulle gjerne vært der, men jeg er dessverre allerede på {aktivitet} {sted}.",
-  "Dessverre kan jeg ikke komme — jeg er på {aktivitet} {sted}.",
-  "Takk for invitten! Jeg skal dessverre på {aktivitet} {sted} den dagen.",
-  "Jeg er veldig lei for at jeg ikke kan det, men jeg skal på {aktivitet} {sted}.",
-  "Nope. på {aktivitet} {sted}. Ha det.",
-  "Nei, jeg er på {aktivitet} {sted}. Ikke spør igjen.",
-  "Har faktisk planer. {sted} på {aktivitet}. Snakkes.",
-  "Passer ikke. Er på {aktivitet} {sted}.",
-  "Prioriterer lett {aktivitet} {sted} i stedet. Ups.",
-  "Absolutt ikke. Jeg er {sted} på {aktivitet}. Spør noen andre.",
-  "Kalender full. Er {sted} på {aktivitet}. Kanskje neste gang. Eller ikke.",
-  "Nah, skal på {aktivitet} {sted}. Bæsj.",
-  "Neeeeej. {aktivitet} {sted} høres mye gøyere ut.",
-  "Lol nei. Å være på {aktivitet} {sted} > ditt event.",
-  "Glem det. Jeg skal nemlig være i {sted} på {aktivitet}.",
-  "Dårlige nyheter — jeg skal på {aktivitet} {sted} da.",
-  "Blir ikke noe av, fordi jeg er i {sted} på {aktivitet}.",
-  "Sjanseløst. {aktivitet} {sted} den dagen.",
-  "Feil dag. Er på {aktivitet} {sted} den dagen, og din greie høres litt kjedelig ut.",
-  "Avslått. Skal på {aktivitet} {sted} i stedet.",
-  "Nei nei nei. {sted} på {aktivitet} da.",
-  "Trokke det du. Er på {aktivitet} {sted} da.",
-  "Skjebnen kaller — jeg MÅ på {aktivitet} {sted}.",
-  "Det er ikke opp til meg lenger. Universet har bestemt at jeg skal på {aktivitet} {sted}.",
-  "Min sjel får ingen ro før jeg er på {aktivitet} {sted}. Du skjønner vel det.",
-  "Jeg har ventet hele livet på denne sjansen til å dra på {aktivitet} {sted}. Gå ikke imot skjebnen.",
-  "Et indre kall — sterkere enn alt annet — trekker meg til {sted} på {aktivitet}.",
-  "Hadde jeg kommet, hadde jeg bare vært der i kroppen. Hjertet mitt er allerede på {aktivitet} {stedNoPre}.",
-  "Noen ting kan bare ikke vente. {aktivitet} {sted} er en av dem.",
-  "Jeg er på {aktivitet} {sted}. Dette er ikke et valg. Det er et kall.",
-  "Jeg kunne vært der. Men {aktivitet} {sted} er min eneste mulige vei nå.",
-  "Ødet har talt — jeg skal til {stedNoPre} på {aktivitet}.",
-  "Det er ikke en mulighet lenger. Jeg simpelthen MÅ på {aktivitet} {sted}.",
-  "En kraft større enn meg selv driver meg til {stedNoPre} på {aktivitet}.",
-  "Jeg er bundet til skjebnen — på {aktivitet} {sted}. Det finnes ingen annen vei.",
-  "Tiden er inne. Jeg må på {aktivitet} {sted}, og kan derfor ikke være tilstede på andre ting da.",
-  "Mitt instinkt krever det. Jeg MÅ på {aktivitet} {sted}, og det kolliderer med din greie.",
-  "Dette er mitt kall. Intet kan stoppe meg fra å delta på {aktivitet} {sted}. Ikke engang ditt arrangement.",
-  "Det kosmiske universet har valgt meg ut til å dra til {stedNoPre} på {aktivitet} akkurat da.",
-  "Jeg er tjener for en kraft jeg ikke kan bekjempe. Kraften kaller meg til {stedNoPre} på {aktivitet}."
+  {
+    "nb": "Tusen takk for invitasjonen, men jeg skal på {aktivitet} {sted} den dagen.",
+    "nn": "Tusen takk for invitasjonen, men eg skal på {aktivitet} {sted} den dagen."
+  },
+  {
+    "nb": "Takk skal du ha for invitasjonen! Dessverre har jeg allerede avtalt {aktivitet} {sted}.",
+    "nn": "Takk skal du ha for invitasjonen! Diverre har eg allereie avtalt {aktivitet} {sted}."
+  },
+  {
+    "nb": "Så leit, men det passer ikke denne gangen — jeg er på {aktivitet} {sted}.",
+    "nn": "Så leit, men det passar ikkje denne gongen — eg er på {aktivitet} {sted}."
+  },
+  {
+    "nb": "Jeg hadde gledet meg til det, men jeg er faktisk på {aktivitet} {sted} akkurat da.",
+    "nn": "Eg hadde gledt meg til det, men eg er faktisk på {aktivitet} {sted} akkurat då."
+  },
+  {
+    "nb": "Jeg kommer dessverre ikke — jeg er på {aktivitet} {sted} den helgen.",
+    "nn": "Eg kjem diverre ikkje — eg er på {aktivitet} {sted} den helga."
+  },
+  {
+    "nb": "Takk for inviten! Dessverre har jeg allerede planer — jeg skal på {aktivitet} {sted}.",
+    "nn": "Takk for inviten! Diverre har eg allereie planar — eg skal på {aktivitet} {sted}."
+  },
+  {
+    "nb": "Det høres kjempekoselig ut, men jeg har allerede planer — jeg skal på {aktivitet} {sted}.",
+    "nn": "Det høyrest kjempekoseleg ut, men eg har allereie planar — eg skal på {aktivitet} {sted}."
+  },
+  {
+    "nb": "Så hyggelig at du spurte, men jeg kan dessverre ikke — jeg skal på {aktivitet} {sted}.",
+    "nn": "Så hyggeleg at du spurte, men eg kan diverre ikkje — eg skal på {aktivitet} {sted}."
+  },
+  {
+    "nb": "Beklager, jeg stikker av gårde på {aktivitet} {sted} den dagen.",
+    "nn": "Beklagar, eg stikk av garde på {aktivitet} {sted} den dagen."
+  },
+  {
+    "nb": "Jeg beklager, men jeg har allerede planer om {aktivitet} {sted}.",
+    "nn": "Eg beklagar, men eg har allereie planar om {aktivitet} {sted}."
+  },
+  {
+    "nb": "Det virker herlig, men jeg har dessverre allerede avtalt {aktivitet} {sted}.",
+    "nn": "Det verkar herleg, men eg har diverre allereie avtalt {aktivitet} {sted}."
+  },
+  {
+    "nb": "Virkelig synd, men jeg har allerede lovet å være {sted} på {aktivitet}.",
+    "nn": "Verkeleg synd, men eg har allereie lova å vere {sted} på {aktivitet}."
+  },
+  {
+    "nb": "Takk skal du ha, men jeg må avslå da jeg skal på {aktivitet} {sted}.",
+    "nn": "Takk skal du ha, men eg må avslå då eg skal på {aktivitet} {sted}."
+  },
+  {
+    "nb": "Jeg ville gjerne kommet, men jeg har dessverre allerede avtalt {aktivitet} {sted}.",
+    "nn": "Eg ville gjerne kome, men eg har diverre allereie avtalt {aktivitet} {sted}."
+  },
+  {
+    "nb": "Beklager at jeg ikke kan møte, jeg er {sted} på {aktivitet}.",
+    "nn": "Beklagar at eg ikkje kan møte, eg er {sted} på {aktivitet}."
+  },
+  {
+    "nb": "Det er veldig snilt av deg, men jeg skal på {aktivitet} {sted} den dagen.",
+    "nn": "Det er veldig snilt av deg, men eg skal på {aktivitet} {sted} den dagen."
+  },
+  {
+    "nb": "Jeg skulle gjerne vært der, men jeg er dessverre allerede på {aktivitet} {sted}.",
+    "nn": "Eg skulle gjerne vore der, men eg er diverre allereie på {aktivitet} {sted}."
+  },
+  {
+    "nb": "Dessverre kan jeg ikke komme — jeg er på {aktivitet} {sted}.",
+    "nn": "Diverre kan eg ikkje kome — eg er på {aktivitet} {sted}."
+  },
+  {
+    "nb": "Takk for invitten! Jeg skal dessverre på {aktivitet} {sted} den dagen.",
+    "nn": "Takk for invitten! Eg skal diverre på {aktivitet} {sted} den dagen."
+  },
+  {
+    "nb": "Jeg er veldig lei for at jeg ikke kan det, men jeg skal på {aktivitet} {sted}.",
+    "nn": "Eg er veldig lei for at eg ikkje kan det, men eg skal på {aktivitet} {sted}."
+  },
+  {
+    "nb": "Nope. på {aktivitet} {sted}. Ha det.",
+    "nn": "Nope. på {aktivitet} {sted}. Ha det."
+  },
+  {
+    "nb": "Nei, jeg er på {aktivitet} {sted}. Ikke spør igjen.",
+    "nn": "Nei, eg er på {aktivitet} {sted}. Ikkje spør igjen."
+  },
+  {
+    "nb": "Har faktisk planer. {sted} på {aktivitet}. Snakkes.",
+    "nn": "Har faktisk planar. {sted} på {aktivitet}. Snakkast."
+  },
+  {
+    "nb": "Passer ikke. Er på {aktivitet} {sted}.",
+    "nn": "Passar ikkje. Er på {aktivitet} {sted}."
+  },
+  {
+    "nb": "Prioriterer lett {aktivitet} {sted} i stedet. Ups.",
+    "nn": "Prioriterer lett {aktivitet} {sted} i staden. Ups."
+  },
+  {
+    "nb": "Absolutt ikke. Jeg er {sted} på {aktivitet}. Spør noen andre.",
+    "nn": "Absolutt ikkje. Eg er {sted} på {aktivitet}. Spør nokon andre."
+  },
+  {
+    "nb": "Kalender full. Er {sted} på {aktivitet}. Kanskje neste gang. Eller ikke.",
+    "nn": "Kalender full. Er {sted} på {aktivitet}. Kanskje neste gong. Eller ikkje."
+  },
+  {
+    "nb": "Nah, skal på {aktivitet} {sted}. Bæsj.",
+    "nn": "Nah, skal på {aktivitet} {sted}. Bæsj."
+  },
+  {
+    "nb": "Neeeeej. {aktivitet} {sted} høres mye gøyere ut.",
+    "nn": "Neeeeej. {aktivitet} {sted} høyrest mykje gøyare ut."
+  },
+  {
+    "nb": "Lol nei. Å være på {aktivitet} {sted} > ditt event.",
+    "nn": "Lol nei. Å vere på {aktivitet} {sted} > ditt event."
+  },
+  {
+    "nb": "Glem det. Jeg skal nemlig være {sted} på {aktivitet}.",
+    "nn": "Glem det. Eg skal nemleg vere {sted} på {aktivitet}."
+  },
+  {
+    "nb": "Dårlige nyheter — jeg skal på {aktivitet} {sted} da.",
+    "nn": "Dårlege nyhende — eg skal på {aktivitet} {sted} då."
+  },
+  {
+    "nb": "Blir ikke noe av, fordi jeg er {sted} på {aktivitet}.",
+    "nn": "Blir ikkje noko av, for eg er {sted} på {aktivitet}."
+  },
+  {
+    "nb": "Sjanseløst. {aktivitet} {sted} den dagen.",
+    "nn": "Sjanselaust. {aktivitet} {sted} den dagen."
+  },
+  {
+    "nb": "Feil dag. Er på {aktivitet} {sted} den dagen, og din greie høres litt kjedelig ut.",
+    "nn": "Feil dag. Er på {aktivitet} {sted} den dagen, og greiene di høyrest litt keisam ut."
+  },
+  {
+    "nb": "Avslått. Skal på {aktivitet} {sted} i stedet.",
+    "nn": "Avslege. Skal på {aktivitet} {sted} i staden."
+  },
+  {
+    "nb": "Nei nei nei. {sted} på {aktivitet} da.",
+    "nn": "Nei nei nei. {sted} på {aktivitet} då."
+  },
+  {
+    "nb": "Trokke det du. Er på {aktivitet} {sted} da.",
+    "nn": "Trur eg ikkje det. Er på {aktivitet} {sted} då."
+  },
+  {
+    "nb": "Skjebnen kaller — jeg MÅ på {aktivitet} {sted}.",
+    "nn": "Lagnaden kallar — eg MÅ på {aktivitet} {sted}."
+  },
+  {
+    "nb": "Det er ikke opp til meg lenger. Universet har bestemt at jeg skal på {aktivitet} {sted}.",
+    "nn": "Det er ikkje opp til meg lenger. Universet har bestemt at eg skal på {aktivitet} {sted}."
+  },
+  {
+    "nb": "Min sjel får ingen ro før jeg er på {aktivitet} {sted}. Du skjønner vel det.",
+    "nn": "Sjela mi får ingen ro før eg er på {aktivitet} {sted}. Du skjønar vel det."
+  },
+  {
+    "nb": "Jeg har ventet hele livet på denne sjansen til å dra på {aktivitet} {sted}. Gå ikke imot skjebnen.",
+    "nn": "Eg har venta heile livet på denne sjansen til å dra på {aktivitet} {sted}. Gå ikkje imot lagnaden."
+  },
+  {
+    "nb": "Et indre kall — sterkere enn alt annet — trekker meg til {stedNoPre} på {aktivitet}.",
+    "nn": "Eit indre kall — sterkare enn alt anna — dreg meg til {stedNoPre} på {aktivitet}."
+  },
+  {
+    "nb": "Hadde jeg kommet, hadde jeg bare vært der fysisk. Hjertet mitt er allerede på {aktivitet} {sted}.",
+    "nn": "Hadde eg kome, hadde eg berre vore der fysisk. Hjarta mitt er allereie på {aktivitet} {sted}."
+  },
+  {
+    "nb": "Noen ting kan bare ikke vente. {aktivitet} {sted} er en av dem.",
+    "nn": "Nokon ting kan berre ikkje vente. {aktivitet} {sted} er ein av dei."
+  },
+  {
+    "nb": "Jeg er på {aktivitet} {sted}. Dette er ikke et valg. Det er et kall.",
+    "nn": "Eg er på {aktivitet} {sted}. Dette er ikkje eit val. Det er eit kall."
+  },
+  {
+    "nb": "Jeg kunne vært der. Men {aktivitet} {sted} er min eneste mulige vei nå.",
+    "nn": "Eg kunne vore der. Men {aktivitet} {sted} er den einaste moglege vegen min no."
+  },
+  {
+    "nb": "Ødet har talt — jeg skal til {stedNoPre} på {aktivitet}.",
+    "nn": "Lagnaden har talt — eg skal til {stedNoPre} på {aktivitet}."
+  },
+  {
+    "nb": "Det er ikke en mulighet lenger. Jeg simpelthen MÅ på {aktivitet} {sted}.",
+    "nn": "Det er ikkje ei mogelegheit lenger. Eg rett og slett MÅ på {aktivitet} {sted}."
+  },
+  {
+    "nb": "En kraft større enn meg selv driver meg til {stedNoPre} på {aktivitet}.",
+    "nn": "Ei kraft større enn meg sjølv driv meg til {stedNoPre} på {aktivitet}."
+  },
+  {
+    "nb": "Jeg er bundet til skjebnen — på {aktivitet} {sted}. Det finnes ingen annen vei.",
+    "nn": "Eg er bunden til lagnaden — på {aktivitet} {sted}. Det finst ingen annan veg."
+  },
+  {
+    "nb": "Tiden er inne. Jeg må på {aktivitet} {sted}, og kan derfor ikke være tilstede på andre ting da.",
+    "nn": "Tida er inne. Eg må på {aktivitet} {sted}, og kan difor ikkje vere til stades på andre ting då."
+  },
+  {
+    "nb": "Mitt instinkt krever det. Jeg MÅ på {aktivitet} {sted}, og det kolliderer med din greie.",
+    "nn": "Instinktet mitt krev det. Eg MÅ på {aktivitet} {sted}, og det kolliderer med greiene di."
+  },
+  {
+    "nb": "Dette er mitt kall. Intet kan stoppe meg fra å delta på {aktivitet} {sted}. Ikke engang ditt arrangement.",
+    "nn": "Dette er kallet mitt. Inkje kan stoppe meg frå å delta på {aktivitet} {sted}. Ikkje eingong arrangementet ditt."
+  },
+  {
+    "nb": "Det kosmiske universet har valgt meg ut til å dra til {stedNoPre} på {aktivitet} akkurat da.",
+    "nn": "Det kosmiske universet har valt meg ut til å dra til {stedNoPre} på {aktivitet} akkurat då."
+  },
+  {
+    "nb": "Jeg er tjener for en kraft jeg ikke kan bekjempe. Kraften kaller meg til {stedNoPre} på {aktivitet}.",
+    "nn": "Eg er tenar for ei kraft eg ikkje kan kjempe mot. Krafta kallar meg til {stedNoPre} på {aktivitet}."
+  }
 ]

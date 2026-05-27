@@ -1,221 +1,74 @@
 [
-  {
-    "tekst": "surfekurs"
-  },
-  {
-    "tekst": "yogaretreat"
-  },
-  {
-    "tekst": "alpakkavandringstur"
-  },
-  {
-    "tekst": "meditasjonsseminar"
-  },
-  {
-    "tekst": "ølbryggingskurs"
-  },
-  {
-    "tekst": "standup-kurs"
-  },
-  {
-    "tekst": "brevduetrening"
-  },
-  {
-    "tekst": "akvarellmalerkurs"
-  },
-  {
-    "tekst": "sopplukningsturer"
-  },
-  {
-    "tekst": "trebåtbyggerkurs"
-  },
-  {
-    "tekst": "ystekurs"
-  },
-  {
-    "tekst": "villmarkskurs"
-  },
-  {
-    "tekst": "fjordkajakkekspedisjon"
-  },
-  {
-    "tekst": "taletreningsseminar"
-  },
-  {
-    "tekst": "bokklubb-helg"
-  },
-  {
-    "tekst": "orienteringsløp"
-  },
-  {
-    "tekst": "linedansekurs"
-  },
-  {
-    "tekst": "kroppsmalerikurs"
-  },
-  {
-    "tekst": "halvmaraton"
-  },
-  {
-    "tekst": "grillmesterkurs"
-  },
-  {
-    "tekst": "smedskurs"
-  },
-  {
-    "tekst": "saueullspinnekurs"
-  },
-  {
-    "tekst": "trommeverksted"
-  },
-  {
-    "tekst": "fortellerworkshop"
-  },
-  {
-    "tekst": "improvisasjonsteaterkurs"
-  },
-  {
-    "tekst": "fermenteringskurs"
-  },
-  {
-    "tekst": "nordlysekspedisjon"
-  },
-  {
-    "tekst": "veving"
-  },
-  {
-    "tekst": "langrennstrening"
-  },
-  {
-    "tekst": "bryting"
-  },
-  {
-    "tekst": "salsakurs"
-  },
-  {
-    "tekst": "keramikkverksted"
-  },
-  {
-    "tekst": "sushikurs"
-  },
-  {
-    "tekst": "fotografi-workshop"
-  },
-  {
-    "tekst": "trappetrening"
-  },
-  {
-    "tekst": "vinterbading"
-  },
-  {
-    "tekst": "plantekurs"
-  },
-  {
-    "tekst": "pilates-klasse"
-  },
-  {
-    "tekst": "mondoart-festival"
-  },
-  {
-    "tekst": "bokbinding-seminar"
-  },
-  {
-    "tekst": "kostymefest"
-  },
-  {
-    "tekst": "champanjesmaking"
-  },
-  {
-    "tekst": "burlesque-kurs"
-  },
-  {
-    "tekst": "selvforsvarskurs"
-  },
-  {
-    "tekst": "gitarleksjoner"
-  },
-  {
-    "tekst": "rokultur-leksjon"
-  },
-  {
-    "tekst": "scrapbooking-workshop"
-  },
-  {
-    "tekst": "glassblåsing"
-  },
-  {
-    "tekst": "skalering"
-  },
-  {
-    "tekst": "akrobatikk-trening"
-  },
-  {
-    "tekst": "pianoleksjon"
-  },
-  {
-    "tekst": "blomsterbinding"
-  },
-  {
-    "tekst": "naturvitenskapslaboratorium"
-  },
-  {
-    "tekst": "kosmetologikurs"
-  },
-  {
-    "tekst": "balletttrening"
-  },
-  {
-    "tekst": "kakepynt-seminar"
-  },
-  {
-    "tekst": "jazz-konsert"
-  },
-  {
-    "tekst": "snøskuterkjøring"
-  },
-  {
-    "tekst": "hytteoppussing"
-  },
-  {
-    "tekst": "hesteshow"
-  },
-  {
-    "tekst": "hundekurs"
-  },
-  {
-    "tekst": "mahjong-turnering"
-  },
-  {
-    "tekst": "seilas-kurs"
-  },
-  {
-    "tekst": "strikking-sirkel"
-  },
-  {
-    "tekst": "tango-kurs"
-  },
-  {
-    "tekst": "fuglekikking-ekspedisjon"
-  },
-  {
-    "tekst": "musikk-festival"
-  },
-  {
-    "tekst": "skateboard-kurs"
-  },
-  {
-    "tekst": "badminton-turnering"
-  },
-  {
-    "tekst": "bordspillkveld"
-  },
-  {
-    "tekst": "kunstvandring"
-  },
-  {
-    "tekst": "podcast-workshop"
-  },
-  {
-    "tekst": "lefsebakekurs"
-  }
+  { "nb": "surfekurs", "nn": "surfekurs" },
+  { "nb": "yogaretreat", "nn": "yogaretreat" },
+  { "nb": "alpakkavandrings", "nn": "alpakkavandrings" },
+  { "nb": "meditasjonsseminar", "nn": "meditasjonsseminar" },
+  { "nb": "ølbryggingskurs", "nn": "ølbryggingskurs" },
+  { "nb": "standup-kurs", "nn": "standup-kurs" },
+  { "nb": "brevduetrening", "nn": "brevduetrening" },
+  { "nb": "akvarellmalerkurs", "nn": "akvarellmalarkurs" },
+  { "nb": "sopp-plukking", "nn": "sopp-plukking" },
+  { "nb": "trebåtbyggerkurs", "nn": "trebåtbyggarkurs" },
+  { "nb": "ystekurs", "nn": "ystekurs" },
+  { "nb": "villmarkskurs", "nn": "villmarkskurs" },
+  { "nb": "kajakkekspedisjon", "nn": "kajakkekspedisjon" },
+  { "nb": "taletreningsseminar", "nn": "taletreningsseminar" },
+  { "nb": "bokklubb-helg", "nn": "bokklubb-helg" },
+  { "nb": "orienteringsløp", "nn": "orienteringsløp" },
+  { "nb": "linedansekurs", "nn": "linedanskurs" },
+  { "nb": "kroppsmalerikurs", "nn": "kroppsmalarikurs" },
+  { "nb": "halvmaraton", "nn": "halvmaraton" },
+  { "nb": "grillmesterkurs", "nn": "grillmeistarkurs" },
+  { "nb": "smedskurs", "nn": "smedskurs" },
+  { "nb": "saueullspinnekurs", "nn": "saueullspinnekurs" },
+  { "nb": "trommeverksted", "nn": "trommeverkstad" },
+  { "nb": "fortellerworkshop", "nn": "forteljarworkshop" },
+  { "nb": "improvisasjonsteaterkurs", "nn": "improvisasjonsteaterkurs" },
+  { "nb": "fermenteringskurs", "nn": "fermenteringskurs" },
+  { "nb": "nordlysekspedisjon", "nn": "nordlysekspedisjon" },
+  { "nb": "veving", "nn": "veving" },
+  { "nb": "langrennstrening", "nn": "langrennstrening" },
+  { "nb": "bryting", "nn": "bryting" },
+  { "nb": "salsakurs", "nn": "salsakurs" },
+  { "nb": "keramikkverksted", "nn": "keramikkverkstad" },
+  { "nb": "sushikurs", "nn": "sushikurs" },
+  { "nb": "fotografi-workshop", "nn": "fotografi-workshop" },
+  { "nb": "trappetrening", "nn": "trappetrening" },
+  { "nb": "vinterbading", "nn": "vinterbading" },
+  { "nb": "plantekurs", "nn": "plantekurs" },
+  { "nb": "pilates-klasse", "nn": "pilates-klasse" },
+  { "nb": "mondoart-festival", "nn": "mondoart-festival" },
+  { "nb": "bokbinding-seminar", "nn": "bokbinding-seminar" },
+  { "nb": "kostymefest", "nn": "kostymefest" },
+  { "nb": "champanjesmaking", "nn": "champanjesmaking" },
+  { "nb": "burlesque-kurs", "nn": "burlesque-kurs" },
+  { "nb": "selvforsvarskurs", "nn": "sjølvforsvarskurs" },
+  { "nb": "gitarleksjoner", "nn": "gitarleksjonar" },
+  { "nb": "rokultur-leksjon", "nn": "rokultur-leksjon" },
+  { "nb": "scrapbooking-workshop", "nn": "scrapbooking-workshop" },
+  { "nb": "glassblåsing", "nn": "glassblåsing" },
+  { "nb": "akrobatikk-trening", "nn": "akrobatikk-trening" },
+  { "nb": "pianoleksjon", "nn": "pianoleksjon" },
+  { "nb": "blomsterbinding", "nn": "blomsterbinding" },
+  { "nb": "naturvitenskapslaboratorium", "nn": "naturvitskapslaboratorium" },
+  { "nb": "kosmetologikurs", "nn": "kosmetologikurs" },
+  { "nb": "ballettrening", "nn": "ballettrening" },
+  { "nb": "kakepynt-seminar", "nn": "kakepynt-seminar" },
+  { "nb": "jazz-konsert", "nn": "jazz-konsert" },
+  { "nb": "snøskuterkjøring", "nn": "snøskuterkøyring" },
+  { "nb": "hytteoppussing", "nn": "hytteoppussing" },
+  { "nb": "hesteshow", "nn": "hesteshow" },
+  { "nb": "hundekurs", "nn": "hundekurs" },
+  { "nb": "mahjong-turnering", "nn": "mahjong-turnering" },
+  { "nb": "seilas", "nn": "seilas" },
+  { "nb": "strikkesirkel", "nn": "strikkesirkel" },
+  { "nb": "tango-kurs", "nn": "tango-kurs" },
+  { "nb": "fuglekikke-ekspedisjon", "nn": "fuglekikke-ekspedisjon" },
+  { "nb": "metal-festival", "nn": "metal-festival" },
+  { "nb": "skateboard-kurs", "nn": "skateboard-kurs" },
+  { "nb": "badminton-turnering", "nn": "badminton-turnering" },
+  { "nb": "bordspillkveld", "nn": "bordspillkveld" },
+  { "nb": "kunstvandring", "nn": "kunstvandring" },
+  { "nb": "podcast-workshop", "nn": "podcast-workshop" },
+  { "nb": "lefsebakekurs", "nn": "lefsebakekurs" }
 ]

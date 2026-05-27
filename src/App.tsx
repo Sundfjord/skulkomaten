@@ -4,11 +4,11 @@ import activitiesData from './data/activities.json'
 import placesData from './data/places.json'
 import templatesData from './data/templates.json'
 
-import type { Activity, Place } from './types'
+import type { Activity, Place, Templates } from './types'
 
 const activities = activitiesData as Activity[]
 const places = placesData as Place[]
-const templates = templatesData as string[]
+const templates = templatesData as Templates
 
 export default function App() {
   return (

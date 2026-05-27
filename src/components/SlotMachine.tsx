@@ -1,14 +1,15 @@
-import { useCallback, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Reel } from './Reel'
 import { useSpin } from '../lib/useSpin'
 import { buildExcuse } from '../lib/buildExcuse'
-import type { Activity, Place } from '../types'
+import { LanguagePicker } from './LanguagePicker'
+import type { Activity, Lang, Place, Templates } from '../types'
 
 interface SlotMachineProps {
   activities: Activity[]
   places: Place[]
-  templates: string[]
+  templates: Templates
 }
 
 /**
@@ -22,6 +23,7 @@ export function SlotMachine({ activities, places, templates }: SlotMachineProps)
   const activitySpin = useSpin({ count: activities.length, duration: ACTIVITY_DURATION })
   const placeSpin = useSpin({ count: places.length, duration: PLACE_DURATION })
 
+  const [lang, setLang] = useState<Lang>('nn')
   const [excuse, setExcuse] = useState<string | null>(null)
   const [isSpinning, setIsSpinning] = useState(false)
   const [lockedReel, setLockedReel] = useState<'activity' | 'place' | null>(null)
@@ -34,15 +36,25 @@ export function SlotMachine({ activities, places, templates }: SlotMachineProps)
       const activity = activities[activityIdx]
       const place = places[placeIdx]
       if (activity && place && frame) {
-        setExcuse(buildExcuse(activity, place, frame))
+        setExcuse(buildExcuse(activity[lang], place, frame[lang]))
       }
     },
-    [templates, activities, places],
+    [templates, activities, places, lang],
   )
 
   const handleReroll = useCallback(() => {
     pickExcuse(activitySpin.targetIndex, placeSpin.targetIndex)
   }, [pickExcuse, activitySpin.targetIndex, placeSpin.targetIndex])
+
+  // When the language tab switches, regenerate the displayed excuse in the new language.
+  // pickExcuse already captures the updated lang; spin indices are stable during a tab switch.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    if (excuse !== null && !isSpinning) {
+      pickExcuse(activitySpin.targetIndex, placeSpin.targetIndex)
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lang])
 
   const handleSpin = useCallback(() => {
     if (isSpinning) return
@@ -87,7 +99,10 @@ export function SlotMachine({ activities, places, templates }: SlotMachineProps)
     }
   }, [excuse])
 
-  const activityItems = activities.map((a) => a.tekst.charAt(0).toUpperCase() + a.tekst.slice(1))
+  const activityItems = activities.map((a) => {
+    const t = a[lang]
+    return t.charAt(0).toUpperCase() + t.slice(1)
+  })
   const placeItems = places.map((p) => `${p.prep} ${p.navn}`)
 
   const sharedButtonBox = '0 0 0 5px #c9860a, 0 8px 28px rgba(0,0,0,0.8), inset 0 3px 10px rgba(255,255,255,0.25)'
@@ -240,8 +255,76 @@ export function SlotMachine({ activities, places, templates }: SlotMachineProps)
         </div>
       </div>
       <div className="flex flex-col w-full items-center gap-5"> 
-            {/* Message box — always rendered */}
-            <ExcusePanel excuse={excuse} isSpinning={isSpinning} />
+            {/* Message card: language tabs + message box unified */}
+            <div className="w-full overflow-hidden rounded-3xl bg-reel-bg shadow-xl ring-1 ring-white/10">
+              <LanguagePicker lang={lang} onChange={setLang} />
+              <div
+                className="flex w-full flex-col items-center justify-center px-6 py-6"
+                style={{ minHeight: '6rem' }}
+                role="region"
+                aria-label="Din unnskyldning"
+              >
+                <AnimatePresence mode="wait">
+                  {excuse !== null ? (
+                    // Excuse present — stamp in with scale + opacity pop then settle
+                    <motion.p
+                      key={excuse}
+                      className="text-center text-lg font-medium text-white sm:text-xl"
+                      aria-live="polite"
+                      initial={{ opacity: 0, scale: 0.72, y: -8 }}
+                      animate={{ opacity: 1, scale: 1, y: 0 }}
+                      exit={{ opacity: 0, scale: 0.9, y: 4 }}
+                      transition={{
+                        opacity: { duration: 0.18 },
+                        scale: { type: 'spring', stiffness: 420, damping: 22 },
+                        y: { type: 'spring', stiffness: 420, damping: 22 },
+                      }}
+                    >
+                      {excuse}
+                    </motion.p>
+                  ) : isSpinning ? (
+                    // Spinning — three pulsing dots
+                    <motion.span
+                      key="spinning"
+                      aria-label="Spinner…"
+                      aria-live="polite"
+                      className="flex items-center gap-2"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {[0, 1, 2].map((i) => (
+                        <motion.span
+                          key={i}
+                          className="block h-2.5 w-2.5 rounded-full bg-white/40"
+                          animate={{ opacity: [0.25, 1, 0.25], scale: [0.8, 1.2, 0.8] }}
+                          transition={{
+                            duration: 0.9,
+                            repeat: Infinity,
+                            delay: i * 0.18,
+                            ease: 'easeInOut',
+                          }}
+                        />
+                      ))}
+                    </motion.span>
+                  ) : (
+                    // Idle before first spin
+                    <motion.p
+                      key="idle"
+                      className="text-center text-base italic text-white/35"
+                      aria-live="polite"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      {lang === 'nn' ? 'Trykk SPINN for å få ei orsaking' : 'Trykk SPINN for å få en unnskyldning'}
+                    </motion.p>
+                  )}
+                </AnimatePresence>
+              </div>
+            </div>
 
             {/* Row 2: NY + KOPIER */}
             <div className="flex w-full gap-4">
@@ -261,7 +344,7 @@ export function SlotMachine({ activities, places, templates }: SlotMachineProps)
                 }}
                 aria-label="Ny unnskyldning med samme hjul"
               >
-                NY
+                GENERER NY
               </motion.button>
 
               <motion.button
@@ -284,78 +367,6 @@ export function SlotMachine({ activities, places, templates }: SlotMachineProps)
               </motion.button>
             </div>
         </div>
-    </div>
-  )
-}
-
-/** Message box — always rendered. Shows placeholder/spinner state when no excuse is ready. */
-function ExcusePanel({ excuse, isSpinning }: { excuse: string | null; isSpinning: boolean }) {
-  return (
-    <div
-      className="flex w-full flex-col items-center justify-center rounded-3xl bg-reel-bg px-6 py-6 ring-1 ring-white/10"
-      style={{ minHeight: '6rem' }}
-      role="region"
-      aria-label="Din unnskyldning"
-    >
-      <AnimatePresence mode="wait">
-        {excuse !== null ? (
-          // Excuse present — stamp in with scale + opacity pop then settle
-          <motion.p
-            key={excuse}
-            className="text-center text-lg font-medium text-white sm:text-xl"
-            aria-live="polite"
-            initial={{ opacity: 0, scale: 0.72, y: -8 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: 4 }}
-            transition={{
-              opacity: { duration: 0.18 },
-              scale: { type: 'spring', stiffness: 420, damping: 22 },
-              y: { type: 'spring', stiffness: 420, damping: 22 },
-            }}
-          >
-            {excuse}
-          </motion.p>
-        ) : isSpinning ? (
-          // Spinning — three pulsing dots
-          <motion.span
-            key="spinning"
-            aria-label="Spinner…"
-            aria-live="polite"
-            className="flex items-center gap-2"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-          >
-            {[0, 1, 2].map((i) => (
-              <motion.span
-                key={i}
-                className="block h-2.5 w-2.5 rounded-full bg-white/40"
-                animate={{ opacity: [0.25, 1, 0.25], scale: [0.8, 1.2, 0.8] }}
-                transition={{
-                  duration: 0.9,
-                  repeat: Infinity,
-                  delay: i * 0.18,
-                  ease: 'easeInOut',
-                }}
-              />
-            ))}
-          </motion.span>
-        ) : (
-          // Idle before first spin
-          <motion.p
-            key="idle"
-            className="text-center text-base italic text-white/35"
-            aria-live="polite"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            Trykk SPINN for å få en unnskyldning
-          </motion.p>
-        )}
-      </AnimatePresence>
     </div>
   )
 }
