@@ -28,10 +28,10 @@ export function ToneSelector({ selected, onChange }: ToneSelectorProps) {
             aria-checked={isSelected}
             onClick={() => onChange(value)}
             className={[
-              'flex items-center gap-2 rounded-full px-7 py-3 text-lg font-semibold transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-reel-accent',
+              'flex items-center gap-2 rounded-full px-7 py-3 text-lg font-display font-semibold transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-reel-accent',
               isSelected
-                ? 'bg-reel-accent text-white shadow-md shadow-reel-accent/40'
-                : 'bg-white/10 text-white/70 hover:bg-white/20 hover:text-white',
+                ? 'bg-reel-accent text-white glow-box-gold'
+                : 'bg-white/10 text-white/70 hover:bg-reel-accent/20 hover:text-reel-accent',
             ].join(' ')}
           >
             <span aria-hidden="true">{emoji}</span>

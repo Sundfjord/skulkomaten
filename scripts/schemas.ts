@@ -1,11 +1,9 @@
 import { z } from 'zod'
 
-export const PrepActivitySchema = z.enum(['på', 'til', 'i'])
 export const PrepPlaceSchema = z.enum(['i', 'på'])
 
 export const ActivitySchema = z.object({
   tekst: z.string().min(1),
-  prep: PrepActivitySchema,
 })
 
 export const PlaceSchema = z.object({

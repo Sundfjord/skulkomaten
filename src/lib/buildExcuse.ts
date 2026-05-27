@@ -4,28 +4,24 @@ import type { Activity, Place } from '../types'
  * Pure function: expand activity and place tokens into a template frame.
  *
  * Token expansion:
- *   {aktivitet}      → "<prep> <tekst>"       e.g. "på surfekurs"
- *   {aktivitetNoPre} → "<tekst>"              e.g. "surfekurs"
- *   {sted}           → "<prep> <navn>"        e.g. "i Lom"
- *   {stedNoPre}      → "<navn>"               e.g. "Lom"
+ *   {aktivitet}  → activity tekst (bare, no preposition — prep lives in the template)
+ *   {sted}       → "<prep> <navn>"   e.g. "i Lom"
+ *   {stedNoPre}  → "<navn>"          e.g. "Lom"
  *
  * The first letter of every sentence is uppercased so templates that start a
- * sentence with a token — e.g. "Nope. {aktivitet} {sted}." — don't leave the
- * expanded preposition ("på", "i") in lowercase.
+ * sentence with "på {aktivitet}" don't leave "på" in lowercase.
  */
 export function buildExcuse(
   activity: Activity,
   place: Place,
   frame: string,
 ): string {
-  const aktivitetWithPrep = `${activity.prep} ${activity.tekst}`
-  const aktivitetNoPrep = activity.tekst
+  const aktivitet = activity.tekst
   const stedWithPrep = `${place.prep} ${place.navn}`
   const stedNoPrep = place.navn
 
   const sentence = frame
-    .replace(/{aktivitetNoPre}/g, aktivitetNoPrep)
-    .replace(/{aktivitet}/g, aktivitetWithPrep)
+    .replace(/{aktivitet}/g, aktivitet)
     .replace(/{stedNoPre}/g, stedNoPrep)
     .replace(/{sted}/g, stedWithPrep)
 

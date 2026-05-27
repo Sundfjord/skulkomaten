@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -36,5 +38,22 @@
   /* Reel cell inner gutter */
   .reel-cell {
     @apply flex items-center justify-center px-3;
+  }
+}
+
+@layer utilities {
+  .text-neon-gold {
+    color: #ffd700;
+    text-shadow:
+      0 0 7px #ffd700,
+      0 0 14px #c9980a80,
+      0 0 28px #c9980a40;
+  }
+
+  .glow-box-gold {
+    box-shadow:
+      0 0 8px #c9980a80,
+      0 0 20px #c9980a40,
+      0 0 40px #c9980a20;
   }
 }

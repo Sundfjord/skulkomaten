@@ -16,7 +16,10 @@ interface ReelProps {
 }
 
 /** Height of each reel cell in pixels */
-export const CELL_HEIGHT = 96
+export const CELL_HEIGHT = 72
+
+/** Visible viewport height — shows 3 cells (previous, current, next) */
+export const REEL_HEIGHT = CELL_HEIGHT * 3
 
 /** Number of full item-list loops scrolled before landing on the target */
 const SPIN_LOOPS = 2
@@ -40,10 +43,9 @@ export function Reel({ items, targetIndex, spinState, onSettled, label, duration
       settledRef.current = false
       controls.set({ y: 0 })
 
-      // Land several loops down so the target sits at the viewport, always
-      // travelling forward (downward scroll = increasingly negative y).
-      const landY = -((items.length * SPIN_LOOPS + targetIndex) * CELL_HEIGHT)
-      // Cover most of the distance fast, then a long slow approach for suspense.
+      // Land several loops down, offsetting by one cell so the target sits
+      // centred in the 3-cell viewport (previous item above, next below).
+      const landY = -((items.length * SPIN_LOOPS + targetIndex - 1) * CELL_HEIGHT)
       const midY = landY * 0.8
 
       controls
@@ -66,12 +68,13 @@ export function Reel({ items, targetIndex, spinState, onSettled, label, duration
     }
 
     if (spinState === 'idle' && prev !== 'idle') {
-      controls.set({ y: -(targetIndex * CELL_HEIGHT) })
+      controls.set({ y: -((items.length + targetIndex - 1) * CELL_HEIGHT) })
     }
   }, [spinState, targetIndex, controls, items.length, onSettled, durationMs])
 
   // Repeating strip: enough copies to cover the deepest landing position.
-  const strip = [...items, ...items, ...items, ...items]
+  // 5 copies so the centered landing offset never underflows the strip
+  const strip = [...items, ...items, ...items, ...items, ...items]
 
   return (
     <div
@@ -79,34 +82,30 @@ export function Reel({ items, targetIndex, spinState, onSettled, label, duration
       aria-label={`${label}: ${spinState === 'settled' || spinState === 'idle' ? items[targetIndex] : 'spinner'}`}
       aria-live="polite"
       aria-atomic="true"
-      className="relative w-56 sm:w-72 overflow-hidden rounded-xl shadow-inner"
-      style={{ height: CELL_HEIGHT }}
+      className="relative w-56 sm:w-72 overflow-hidden"
+      style={{ height: REEL_HEIGHT }}
     >
-      {/* Gradient overlays for depth */}
+      {/* Gradient overlays fade top/bottom cell so center item stands out */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 z-10 h-10 bg-gradient-to-b from-reel-bg to-transparent"
+        className="pointer-events-none absolute inset-x-0 top-0 z-10 bg-gradient-to-b from-black/30 to-transparent"
+        style={{ height: CELL_HEIGHT }}
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-10 bg-gradient-to-t from-reel-bg to-transparent"
-      />
-
-      {/* Highlight bar at centre */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-1/2 z-10 h-px -translate-y-1/2 bg-reel-accent/60"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black/30 to-transparent"
+        style={{ height: CELL_HEIGHT }}
       />
 
       <motion.div
         animate={controls}
         className="will-change-transform"
-        style={{ y: -(targetIndex * CELL_HEIGHT) }}
+        style={{ y: -((items.length + targetIndex - 1) * CELL_HEIGHT) }}
       >
         {strip.map((item, i) => (
           <div
             key={i}
-            className="flex items-center justify-center px-3 text-center leading-tight break-words hyphens-auto bg-reel-strip text-white font-semibold text-xl sm:text-2xl select-none"
+            className="flex items-center justify-center px-3 text-center leading-tight break-words hyphens-auto bg-white text-gray-900 font-display font-semibold text-xl sm:text-2xl select-none"
             style={{ height: CELL_HEIGHT }}
           >
             {/* Capitalise for display even though data is lowercase */}

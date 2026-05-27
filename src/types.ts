@@ -1,8 +1,6 @@
 export interface Activity {
   /** Display text, stored lowercase for mid-sentence use */
   tekst: string
-  /** Preposition governing this activity: på / til / i */
-  prep: 'på' | 'til' | 'i'
 }
 
 export interface Place {

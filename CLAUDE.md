@@ -46,21 +46,27 @@ Two independent halves connected only by three JSON files in `src/data/`:
 
 ### The grammaticality invariant (most important thing to understand)
 
-Prepositions live in the **data**, not the templates. Each activity carries its own prep
-(`på`/`til`/`i`) and each place its own (`i`/`på`). `src/lib/buildExcuse.ts` expands
-`{aktivitet}` → `"<prep> <tekst>"` and `{sted}` → `"<prep> <navn>"`, then substitutes into
-the frame. This is what makes **every** template × activity × place combination grammatical.
+Activity prepositions live in the **templates**; place prepositions live in the **data**.
+
+- `Activity` has only `tekst` — no `prep` field. Every activity uses `på`, which is written
+  explicitly in each template frame (e.g. `"jeg skal på {aktivitet} {sted}"`).
+- `Place` carries its own `prep` (`i`/`på`) because place prepositions vary ("i Lom" but
+  "på Voss") and cannot be baked into templates.
+- `src/lib/buildExcuse.ts` expands:
+  - `{aktivitet}` → bare `activity.tekst` (no preposition added — the template supplies it)
+  - `{sted}` → `"<place.prep> <place.navn>"` e.g. "i Lom"
+  - `{stedNoPre}` → bare `place.navn` e.g. "Lom"
 
 Consequences when editing:
-- Template frames must read correctly with a prepositional phrase dropped into both token
-  slots — e.g. a frame ending `"skal på {aktivitet}"` would produce "skal på på surfekurs".
-  Never put a preposition immediately before a token; let the token's own prep supply it.
-- `buildExcuse` capitalises the first letter of the string **and after every `. ! ?`**, so a
-  prep that starts a sentence mid-frame (`"Nope. {aktivitet}…"` → "Nope. På…") is uppercased.
+- Every template frame must include `på` (or another explicit preposition) immediately before
+  `{aktivitet}`. The token expands to bare tekst only — it does **not** supply its own prep.
+- `buildExcuse` capitalises the first letter of the string **and after every `. ! ?`**, so
+  `"Nope. på {aktivitet}…"` correctly becomes `"Nope. På surfekurs…"`.
 - Activity `tekst` is stored **lowercase** (for mid-sentence use); reels capitalise for
   display. Place `navn` is stored capitalised.
-- The preposition rendered between the two reels in the UI is the **place** prep (the word
-  grammatically linking activity → place), shown only once an excuse has been assembled.
+- The place reel displays `"${prep} ${navn}"` (e.g. "i Lom", "på Voss") — the preposition is
+  part of the reel label, not a separate UI element. The Reel component capitalises the first
+  character for display, so "i Lom" shows as "I Lom" in the strip.
 
 ### Reel animation flow
 
@@ -74,8 +80,8 @@ staggers their stop times (place reel finishes last), and assembles the excuse v
 ### Type definitions are duplicated by design
 
 `src/types.ts` (frontend) and `scripts/schemas.ts` (zod, pre-generation) define the same
-shapes — `Activity`, `Place`, `Templates`, and the `Tone` enum (`høflig | frekk | dramatisk`).
-Keep them in sync when adding a tone or changing a preposition set. The zod
+shapes — `Activity` (only `tekst`), `Place` (with `prep`), `Templates`, and the `Tone` enum
+(`høflig | frekk | dramatisk`). Keep them in sync when adding a tone. The zod
 `TemplatesSchema` enforces that every frame contains both `{aktivitet}` and `{sted}` tokens.
 
 ## Language correctness
