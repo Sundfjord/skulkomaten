@@ -12,7 +12,7 @@ const møte: Activity = { tekst: 'halvdagsmøte om fremtiden til sopprisotto' }
 const hell: Place = { navn: 'Hell', prep: 'i' }
 
 describe('buildExcuse', () => {
-  it('substitutes {aktivitet} and {sted} into a høflig frame', () => {
+  it('substitutes {aktivitet} and {sted} into a template frame', () => {
     const frame = 'Tusen takk for invitasjonen, men jeg skal på {aktivitet} {sted} den dagen.'
     expect(buildExcuse(surfekurs, lom, frame)).toBe(
       'Tusen takk for invitasjonen, men jeg skal på surfekurs i Lom den dagen.',

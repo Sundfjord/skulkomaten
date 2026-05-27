@@ -13,6 +13,8 @@ interface ReelProps {
   label: string
   /** How long (ms) the full spin animation runs before it settles */
   durationMs: number
+  /** When true, render a green frame indicating this reel is held */
+  locked?: boolean
 }
 
 /** Height of each reel cell in pixels */
@@ -30,7 +32,7 @@ const SPIN_LOOPS = 2
  * machine reel coasting to a stop. Items are looped via a repeating strip so
  * the scroll always travels forward regardless of count.
  */
-export function Reel({ items, targetIndex, spinState, onSettled, label, durationMs }: ReelProps) {
+export function Reel({ items, targetIndex, spinState, onSettled, label, durationMs, locked = false }: ReelProps) {
   const controls = useAnimationControls()
   const prevStateRef = useRef<SpinState>('idle')
   const settledRef = useRef(false)
@@ -82,20 +84,46 @@ export function Reel({ items, targetIndex, spinState, onSettled, label, duration
       aria-label={`${label}: ${spinState === 'settled' || spinState === 'idle' ? items[targetIndex] : 'spinner'}`}
       aria-live="polite"
       aria-atomic="true"
-      className="relative w-56 sm:w-72 overflow-hidden"
+      className="relative w-full overflow-hidden"
       style={{ height: REEL_HEIGHT }}
     >
       {/* Gradient overlays fade top/bottom cell so center item stands out */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 z-10 bg-gradient-to-b from-black/30 to-transparent"
+        className="pointer-events-none absolute inset-x-0 top-0 z-10 bg-gradient-to-b from-white via-white/70 to-transparent"
         style={{ height: CELL_HEIGHT }}
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black/30 to-transparent"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-white via-white/70 to-transparent"
         style={{ height: CELL_HEIGHT }}
       />
+
+      {/* Lock indicator — green frame around the whole reel plus a tinted
+          band across the centre cell (the "held" value) */}
+      {locked && (
+        <>
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 z-20"
+            style={{
+              border: '10px solid #22c55e',
+              boxShadow: '0 0 14px rgba(34,197,94,0.85), inset 0 0 14px rgba(34,197,94,0.45)',
+            }}
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-0 z-20 bg-green-400/20"
+            style={{ top: CELL_HEIGHT, height: CELL_HEIGHT }}
+          />
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute right-3 top-3 z-30 select-none rounded-md bg-green-500 px-2 py-0.5 font-display text-[10px] font-bold uppercase tracking-widest text-white shadow"
+          >
+            Hold
+          </span>
+        </>
+      )}
 
       <motion.div
         animate={controls}
@@ -109,7 +137,7 @@ export function Reel({ items, targetIndex, spinState, onSettled, label, duration
             style={{ height: CELL_HEIGHT }}
           >
             {/* Capitalise for display even though data is lowercase */}
-            {item.charAt(0).toUpperCase() + item.slice(1)}
+            {item}
           </div>
         ))}
       </motion.div>

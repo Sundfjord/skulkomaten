@@ -14,16 +14,15 @@ export const PlaceSchema = z.object({
 export const ActivitiesSchema = z.array(ActivitySchema).min(1)
 export const PlacesSchema = z.array(PlaceSchema).min(1)
 
-export const ToneSchema = z.enum(['høflig', 'frekk', 'dramatisk'])
-
 export const TemplatesSchema = z
-  .record(ToneSchema, z.array(z.string().min(1)).min(1))
+  .array(z.string().min(1))
+  .min(1)
   .refine(
-    (templates) =>
-      Object.values(templates).every((frames) =>
-        frames.every((f) => f.includes('{aktivitet}') && f.includes('{sted}')),
+    (frames) =>
+      frames.every(
+        (f) => f.includes('{aktivitet}') && (f.includes('{sted}') || f.includes('{stedNoPre}')),
       ),
-    { message: 'Every template frame must contain both {aktivitet} and {sted} tokens' },
+    { message: 'Every template frame must contain {aktivitet} and either {sted} or {stedNoPre}' },
   )
 
 export type Activity = z.infer<typeof ActivitySchema>

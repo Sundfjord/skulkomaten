@@ -10,11 +10,5 @@ export interface Place {
   prep: 'i' | 'på'
 }
 
-/** Available tone identifiers */
-export type Tone = 'høflig' | 'frekk' | 'dramatisk'
-
-/**
- * Template bank, keyed by tone.
- * Every string must contain exactly the tokens {aktivitet} and {sted}.
- */
-export type Templates = Record<Tone, string[]>
+/** Flat list of template frames — one is picked randomly each spin */
+export type Templates = string[]
