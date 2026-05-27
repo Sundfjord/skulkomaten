@@ -6,9 +6,6 @@
     "tekst": "yogaretreat"
   },
   {
-    "tekst": "terningklubb"
-  },
-  {
     "tekst": "alpakkavandringstur"
   },
   {
@@ -36,22 +33,16 @@
     "tekst": "ystekurs"
   },
   {
-    "tekst": "klezmermusikkworkshop"
-  },
-  {
     "tekst": "villmarkskurs"
   },
   {
     "tekst": "fjordkajakkekspedisjon"
   },
   {
-    "tekst": "kaktuspoteringsworkshop"
-  },
-  {
     "tekst": "taletreningsseminar"
   },
   {
-    "tekst": "bokklubbhelg"
+    "tekst": "bokklubb-helg"
   },
   {
     "tekst": "orienteringsløp"
@@ -81,19 +72,13 @@
     "tekst": "fortellerworkshop"
   },
   {
-    "tekst": "sjømannsknopingskurs"
-  },
-  {
     "tekst": "improvisasjonsteaterkurs"
   },
   {
-    "tekst": "fermenterings- og pickleskurs"
+    "tekst": "fermenteringskurs"
   },
   {
     "tekst": "nordlysekspedisjon"
-  },
-  {
-    "tekst": "hestebrynjeflettkurs"
   },
   {
     "tekst": "veving"
@@ -105,7 +90,7 @@
     "tekst": "bryting"
   },
   {
-    "tekst": "salsadanskurs"
+    "tekst": "salsakurs"
   },
   {
     "tekst": "keramikkverksted"
@@ -121,9 +106,6 @@
   },
   {
     "tekst": "vinterbading"
-  },
-  {
-    "tekst": "detektiv-krimlekskap"
   },
   {
     "tekst": "plantekurs"
@@ -147,7 +129,7 @@
     "tekst": "burlesque-kurs"
   },
   {
-    "tekst": "forsvarskunst"
+    "tekst": "selvforsvarskurs"
   },
   {
     "tekst": "gitarleksjoner"
@@ -168,10 +150,7 @@
     "tekst": "akrobatikk-trening"
   },
   {
-    "tekst": "pianolesjon"
-  },
-  {
-    "tekst": "rekkeklatring-konkuranse"
+    "tekst": "pianoleksjon"
   },
   {
     "tekst": "blomsterbinding"
@@ -180,7 +159,7 @@
     "tekst": "naturvitenskapslaboratorium"
   },
   {
-    "tekst": "kosmetologi-kurs"
+    "tekst": "kosmetologikurs"
   },
   {
     "tekst": "balletttrening"
@@ -228,7 +207,7 @@
     "tekst": "badminton-turnering"
   },
   {
-    "tekst": "bordspill-natt"
+    "tekst": "bordspillkveld"
   },
   {
     "tekst": "kunstvandring"
@@ -237,6 +216,6 @@
     "tekst": "podcast-workshop"
   },
   {
-    "tekst": "lefsebaking-kurs"
+    "tekst": "lefsebakekurs"
   }
 ]
